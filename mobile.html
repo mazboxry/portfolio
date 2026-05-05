@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="スマホ向けゲームポートフォリオ導線ページ">
+  <title>スマホ向け | mazboxry Games</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="mazboxry Game Portfolio home">
+        <span class="brand-mark">M</span>
+        <span>mazboxry Games</span>
+      </a>
+      <a class="nav-link" href="index.html">通常版ポートフォリオ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Mobile Guide</p>
+        <h1>スマホ向け案内ページ</h1>
+        <p>スマホではWebGL負荷により、ゲームによってはブラウザがクラッシュする場合があります。まずはこのページから軽めのタイトルを選んでください。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#mobile-games">スマホ向けゲームを見る</a>
+          <a class="button button-ghost" href="https://mazboxry.github.io/portfolio/">公開ページへ</a>
+        </div>
+      </div>
+      <article class="featured-card" aria-label="Mobile warning">
+        <div class="featured-content">
+          <span class="tag">Notice</span>
+          <h2>注意事項</h2>
+          <p>高負荷ステージや長時間プレイ時は、端末温度上昇やメモリ不足でブラウザが再起動することがあります。動作が重い場合はPC版ブラウザでのプレイを推奨します。</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="shell section" id="mobile-games" aria-labelledby="mobile-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Recommended on Mobile</p>
+          <h2 id="mobile-heading">スマホ向け導線</h2>
+        </div>
+      </div>
+      <div class="game-grid">
+        <article class="game-card">
+          <div class="card-body">
+            <h3>Orbit Shepherd</h3>
+            <p>比較的軽量。短時間のパズルプレイ向け。</p>
+            <div class="card-actions">
+              <a class="button button-primary" href="games/orbit-shepherd.html#play">プレイページへ</a>
+              <a class="button button-secondary" href="games/orbit-shepherd.html">詳細</a>
+            </div>
+          </div>
+        </article>
+        <article class="game-card">
+          <div class="card-body">
+            <h3>Neon Dungeon AI</h3>
+            <p>演出が重い端末ではクラッシュの可能性あり。Wi-Fi環境推奨。</p>
+            <div class="card-actions">
+              <a class="button button-primary" href="games/neon-dungeon.html#play">プレイページへ</a>
+              <a class="button button-secondary" href="games/neon-dungeon.html">詳細</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>&copy; 2026 mazboxry. Mobile landing page.</p>
+      <a href="index.html">Home</a>
+    </div>
+  </footer>
+</body>
+</html>

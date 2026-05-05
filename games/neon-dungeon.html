@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Neon Dungeon AI - browser playable game portfolio page">
+  <title>Neon Dungeon AI | mazboxry Games</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">M</span>
+        <span>mazboxry Games</span>
+      </a>
+      <a class="nav-link" href="../index.html#games">All Games</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero shell">
+      <a class="breadcrumb" href="../index.html#games">← 作品一覧へ戻る</a>
+      <div class="page-hero-grid">
+        <div class="hero-banner">
+          <img src="../assets/images/neon-dungeon-banner.svg" alt="Neon Dungeon AI banner" width="960" height="540">
+        </div>
+        <div>
+          <p class="eyebrow">Browser Game</p>
+          <h1>Neon Dungeon AI</h1>
+          <p>AIディレクターがプレイヤーの状況を見て部屋構成と敵配置を調整する、短時間ローグライト風アクション。</p>
+          <div class="tag-list" aria-label="Technologies and genres">
+            <span class="tag">Godot 3.6</span>
+            <span class="tag">AI Director</span>
+            <span class="tag">Action</span>
+            <span class="tag">Roguelite</span>
+          </div>
+          <div class="detail-actions">
+            <a class="button button-primary" href="#play">Play Now</a>
+            <a class="button button-ghost" href="#technical">Technical Notes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell detail-layout">
+      <div class="detail-stack">
+        <section class="detail-panel" id="play" aria-labelledby="play-heading">
+          <p class="eyebrow">Web Export</p>
+          <h2 id="play-heading">Playable Area</h2>
+          <p>現在はプレースホルダーです。Godot の Web エクスポート後、この iframe の src を実際のゲームの index.html に差し替えます。</p>
+          <div class="play-frame">
+            <iframe title="Neon Dungeon AI playable placeholder" src="../assets/playable/placeholder.html?title=Neon%20Dungeon%20AI" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <section class="detail-panel" aria-labelledby="screenshots-heading">
+          <p class="eyebrow">Screenshots</p>
+          <h2 id="screenshots-heading">Screenshots</h2>
+          <div class="screenshot-grid">
+            <img src="../assets/images/neon-dungeon-shot1.svg" alt="Neon Dungeon AI screenshot 1" width="960" height="540">
+            <img src="../assets/images/neon-dungeon-shot2.svg" alt="Neon Dungeon AI screenshot 2" width="960" height="540">
+          </div>
+        </section>
+      </div>
+
+      <aside class="detail-stack">
+        <section class="detail-panel" aria-labelledby="controls-heading">
+          <p class="eyebrow">How to Play</p>
+          <h2 id="controls-heading">Controls</h2>
+          <ul class="controls-list">
+            <li>WASD: 移動</li>
+            <li>マウス: 狙う</li>
+            <li>左クリック: 攻撃</li>
+            <li>Shift: ダッシュ</li>
+          </ul>
+        </section>
+
+        <section class="detail-panel" id="technical" aria-labelledby="technical-heading">
+          <p class="eyebrow">Technical</p>
+          <h2 id="technical-heading">Technologies</h2>
+          <ul class="tech-list">
+            <li>Godot 3.6</li>
+            <li>AI Director</li>
+            <li>Action</li>
+            <li>Roguelite</li>
+          </ul>
+          <h2>Challenges & Solutions</h2>
+          <p>難易度が急に跳ねないよう、敵の出現候補をスコア化してから抽選する仕組みにしています。Godot 3.6 の Web エクスポートでは入力遅延を抑えるため、画面効果をプリセット化して負荷を一定に保つ設計です。</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>&copy; 2026 mazboxry. Static portfolio for GitHub Pages.</p>
+      <a href="../index.html">Home</a>
+    </div>
+  </footer>
+</body>
+</html>

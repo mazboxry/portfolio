@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="mazboxry のブラウザで遊べるゲームポートフォリオ">
+  <title>mazboxry Game Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="mazboxry Game Portfolio home">
+        <span class="brand-mark">M</span>
+        <span>mazboxry Games</span>
+      </a>
+      <a class="nav-link" href="https://github.com/mazboxry" rel="noreferrer">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Godot 3.6 / Browser Playable Games</p>
+        <h1>Webで遊べるゲーム作品一覧</h1>
+        <p>
+          Steamストア風の見やすさを意識した、静的なゲームポートフォリオです。
+          各カードから紹介ページとプレイページへ移動できます。
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#games">作品を見る</a>
+          <a class="button button-ghost" href="README.md">追加方法</a>
+        </div>
+      </div>
+      <article class="featured-card" aria-label="Featured game">
+        <img src="assets/images/neon-dungeon-banner.svg" alt="Neon Dungeon AI banner" width="960" height="420">
+        <div class="featured-content">
+          <span class="tag">Featured</span>
+          <h2>Neon Dungeon AI</h2>
+          <p>AIディレクターが部屋構成を変える、短時間で遊べる探索アクション。</p>
+          <a class="button button-primary" href="games/neon-dungeon.html">詳細を見る</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="shell section" id="games" aria-labelledby="games-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Library</p>
+          <h2 id="games-heading">Games</h2>
+        </div>
+        <div class="filters" aria-label="Filter games by tag">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="Godot">Godot</button>
+          <button class="filter-button" type="button" data-filter="Procedural">Procedural</button>
+          <button class="filter-button" type="button" data-filter="AI">AI</button>
+          <button class="filter-button" type="button" data-filter="Puzzle">Puzzle</button>
+        </div>
+      </div>
+
+      <div class="game-grid">
+        <article class="game-card" data-tags="Godot Procedural Cozy">
+          <a class="card-media" href="games/asteroid-garden.html" aria-label="Asteroid Garden details">
+            <img src="assets/images/asteroid-garden-thumb.svg" alt="Asteroid Garden thumbnail" width="640" height="360">
+          </a>
+          <div class="card-body">
+            <h3>Asteroid Garden</h3>
+            <p>小惑星に植物を増やしながら資源循環を整える箱庭ゲーム。</p>
+            <div class="tag-list" aria-label="Tags">
+              <span class="tag">Godot</span>
+              <span class="tag">Procedural</span>
+              <span class="tag">Cozy</span>
+            </div>
+            <div class="card-actions">
+              <a class="button button-primary" href="games/asteroid-garden.html#play">Play</a>
+              <a class="button button-secondary" href="games/asteroid-garden.html">Details</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="game-card" data-tags="Godot AI Action">
+          <a class="card-media" href="games/neon-dungeon.html" aria-label="Neon Dungeon AI details">
+            <img src="assets/images/neon-dungeon-thumb.svg" alt="Neon Dungeon AI thumbnail" width="640" height="360">
+          </a>
+          <div class="card-body">
+            <h3>Neon Dungeon AI</h3>
+            <p>AIディレクターがテンポを調整するローグライト風アクション。</p>
+            <div class="tag-list" aria-label="Tags">
+              <span class="tag">Godot</span>
+              <span class="tag">AI</span>
+              <span class="tag">Action</span>
+            </div>
+            <div class="card-actions">
+              <a class="button button-primary" href="games/neon-dungeon.html#play">Play</a>
+              <a class="button button-secondary" href="games/neon-dungeon.html">Details</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="game-card" data-tags="Godot Puzzle Physics">
+          <a class="card-media" href="games/orbit-shepherd.html" aria-label="Orbit Shepherd details">
+            <img src="assets/images/orbit-shepherd-thumb.svg" alt="Orbit Shepherd thumbnail" width="640" height="360">
+          </a>
+          <div class="card-body">
+            <h3>Orbit Shepherd</h3>
+            <p>重力場を切り替えて衛星をゴールへ導く物理パズル。</p>
+            <div class="tag-list" aria-label="Tags">
+              <span class="tag">Godot</span>
+              <span class="tag">Puzzle</span>
+              <span class="tag">Physics</span>
+            </div>
+            <div class="card-actions">
+              <a class="button button-primary" href="games/orbit-shepherd.html#play">Play</a>
+              <a class="button button-secondary" href="games/orbit-shepherd.html">Details</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>&copy; 2026 mazboxry. Built as a static GitHub Pages portfolio.</p>
+      <a href="https://github.com/mazboxry/portfolio" rel="noreferrer">Repository</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

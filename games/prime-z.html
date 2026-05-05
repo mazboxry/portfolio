@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Asteroid Garden - browser playable game portfolio page">
+  <title>Asteroid Garden | mazboxry Games</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">M</span>
+        <span>mazboxry Games</span>
+      </a>
+      <a class="nav-link" href="../index.html#games">All Games</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero shell">
+      <a class="breadcrumb" href="../index.html#games">← 作品一覧へ戻る</a>
+      <div class="page-hero-grid">
+        <div class="hero-banner">
+          <img src="../assets/images/asteroid-garden-banner.svg" alt="Asteroid Garden banner" width="960" height="540">
+        </div>
+        <div>
+          <p class="eyebrow">Browser Game</p>
+          <h1>Asteroid Garden</h1>
+          <p>ゾンビの頭を（数字で）カチ割れ！</p>
+          <div class="tag-list" aria-label="Technologies and genres">
+            <span class="tag">Godot 3.6</span>
+            <span class="tag">Procedural Generation</span>
+            <span class="tag">Resource Simulation</span>
+            <span class="tag">HTML5 Export</span>
+            <span class="tag">Math Lesson</span>
+
+          </div>
+          <div class="detail-actions">
+            <a class="button button-primary" href="#play">Play Now</a>
+            <a class="button button-ghost" href="#technical">Technical Notes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell detail-layout">
+      <div class="detail-stack">
+        <section class="detail-panel" id="play" aria-labelledby="play-heading">
+          <p class="eyebrow">Web Export</p>
+          <h2 id="play-heading">Playable Area</h2>
+          <!-- <p>現在はプレースホルダーです。Godot の Web エクスポート後、この iframe の src を実際のゲームの index.html に差し替えます。</p> -->
+          <div class="play-frame is-portrait">
+            <iframe title="Prime of Z playable" src="../assets/playable/pz/index.html" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <p class="play-frame-note"><strong>スマホ注意:</strong> 端末によってはブラウザがクラッシュする場合があります。重い場合はPC版ブラウザでお試しください。</p>
+        </section>
+
+        <section class="detail-panel" aria-labelledby="screenshots-heading">
+          <p class="eyebrow">Screenshots</p>
+          <h2 id="screenshots-heading">Screenshots</h2>
+          <div class="screenshot-grid">
+            <img src="../assets/images/asteroid-garden-shot1.svg" alt="Asteroid Garden screenshot 1" width="960" height="540">
+            <img src="../assets/images/asteroid-garden-shot2.svg" alt="Asteroid Garden screenshot 2" width="960" height="540">
+          </div>
+        </section>
+      </div>
+
+      <aside class="detail-stack">
+        <section class="detail-panel" aria-labelledby="controls-heading">
+          <p class="eyebrow">How to Play</p>
+          <h2 id="controls-heading">Controls</h2>
+          <ul class="controls-list">
+            <li>数字ボタン　：　ゾンビの頭に表示されている数字を割り切れるボタンを押そう</li>
+          </ul>
+        </section>
+
+        <section class="detail-panel" id="technical" aria-labelledby="technical-heading">
+          <p class="eyebrow">Technical</p>
+          <h2 id="technical-heading">Technologies</h2>
+          <ul class="tech-list">
+            <li>Godot 3.6</li>
+            <li>Procedural Generation</li>
+            <li>Resource Simulation</li>
+            <li>HTML5 Export</li>
+          </ul>
+          <h2>Challenges & Solutions</h2>
+          <p>素因数分解をゾンビシューティング風　脳トレにしました</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>&copy; 2026 mazboxry. Static portfolio for GitHub Pages.</p>
+      <a href="../index.html">Home</a>
+    </div>
+  </footer>
+</body>
+</html>

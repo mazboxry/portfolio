@@ -364,9 +364,17 @@ a {
   color: #ffd68a;
 }
 
+.play-frame.is-portrait {
+  display: flex;
+  justify-content: center;
+}
+
 .play-frame.is-portrait iframe {
   aspect-ratio: 9 / 16;
-  min-height: min(78vh, 860px);
+  width: auto;
+  max-width: 100%;
+  height: min(78dvh, 860px);
+  min-height: 0;
 }
 
 .play-frame.is-landscape iframe {
@@ -460,6 +468,11 @@ a {
 
   .play-frame.is-portrait iframe,
   .play-frame.is-landscape iframe {
-    min-height: 62vh;
+    min-height: 0;
+  }
+
+  .play-frame.is-portrait iframe {
+    width: 100%;
+    height: min(72dvh, 760px);
   }
 }

@@ -1,135 +1,356 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns='http://www.w3.org/1999/xhtml' lang='ja' xml:lang='ja'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="mazboxry のブラウザで遊べるゲームポートフォリオ">
-  <title>mazboxry Game Portfolio</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no' />
+	<title>prime_z</title>
+	<style type='text/css'>
+		body {
+			touch-action: none;
+			margin: 0;
+			border: 0 none;
+			padding: 0;
+			text-align: center;
+			background-color: black;
+			color: #e0e0e0;
+			font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+		}
+
+		#canvas {
+			display: block;
+			margin: 0;
+			color: white;
+			width: 100vw;
+			height: 100dvh;
+		}
+
+		#canvas:focus {
+			outline: none;
+		}
+
+		.godot {
+			font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+			color: #e0e0e0;
+			background-color: #3b3943;
+			background-image: linear-gradient(to bottom, #403e48, #35333c);
+			border: 1px solid #45434e;
+			box-shadow: 0 0 1px 1px #2f2d35;
+		}
+
+		#start-gate {
+			position: fixed;
+			inset: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 16px;
+			box-sizing: border-box;
+			background: rgba(0, 0, 0, 0.88);
+			z-index: 20;
+		}
+
+		#start-panel {
+			width: min(640px, 100%);
+			padding: 16px;
+			box-sizing: border-box;
+			border-radius: 10px;
+		}
+
+		#start-panel h1 {
+			margin: 0 0 10px;
+			font-size: 1.25rem;
+		}
+
+		#start-panel p {
+			margin: 0;
+			line-height: 1.4;
+		}
+
+		#start-actions {
+			display: flex;
+			gap: 10px;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin-top: 14px;
+		}
+
+		#start-button,
+		#lite-button {
+			min-width: 160px;
+			border: 1px solid #5a5862;
+			border-radius: 8px;
+			padding: 11px 14px;
+			font-size: 15px;
+			font-weight: 700;
+			cursor: pointer;
+		}
+
+		#start-button {
+			background: #4f8cff;
+			color: #fff;
+		}
+
+		#lite-button {
+			background: #2a2a2a;
+			color: #ddd;
+		}
+
+		#start-hint {
+			margin-top: 10px;
+			font-size: 0.92rem;
+			color: #cfcfcf;
+			min-height: 1.4em;
+		}
+
+		/* Status display */
+		#status {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			visibility: hidden;
+			z-index: 10;
+		}
+
+		#status-progress {
+			width: 366px;
+			height: 7px;
+			background-color: #38363A;
+			border: 1px solid #444246;
+			padding: 1px;
+			box-shadow: 0 0 2px 1px #1B1C22;
+			border-radius: 2px;
+			visibility: visible;
+		}
+
+		@media only screen and (orientation:portrait) {
+			#status-progress {
+				width: 61.8%;
+			}
+		}
+
+		#status-progress-inner {
+			height: 100%;
+			width: 0;
+			box-sizing: border-box;
+			transition: width 0.5s linear;
+			background-color: #202020;
+			border: 1px solid #222223;
+			box-shadow: 0 0 1px 1px #27282E;
+			border-radius: 3px;
+		}
+
+		#status-indeterminate {
+			height: 42px;
+			visibility: visible;
+			position: relative;
+		}
+
+		#status-indeterminate > div {
+			width: 4.5px;
+			height: 0;
+			border-style: solid;
+			border-width: 9px 3px 0 3px;
+			border-color: #2b2b2b transparent transparent transparent;
+			transform-origin: center 21px;
+			position: absolute;
+		}
+
+		#status-indeterminate > div:nth-child(1) { transform: rotate( 22.5deg); }
+		#status-indeterminate > div:nth-child(2) { transform: rotate( 67.5deg); }
+		#status-indeterminate > div:nth-child(3) { transform: rotate(112.5deg); }
+		#status-indeterminate > div:nth-child(4) { transform: rotate(157.5deg); }
+		#status-indeterminate > div:nth-child(5) { transform: rotate(202.5deg); }
+		#status-indeterminate > div:nth-child(6) { transform: rotate(247.5deg); }
+		#status-indeterminate > div:nth-child(7) { transform: rotate(292.5deg); }
+		#status-indeterminate > div:nth-child(8) { transform: rotate(337.5deg); }
+
+		#status-notice {
+			margin: 0 100px;
+			line-height: 1.3;
+			padding: 4px 6px;
+			visibility: visible;
+		}
+	</style>
+	<link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
+	<link rel='apple-touch-icon' href='index.apple-touch-icon.png'/>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav shell" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="mazboxry Game Portfolio home">
-        <span class="brand-mark">M</span>
-        <span>mazboxry Games</span>
-      </a>
-      <a class="nav-link" href="mobile.html">スマホ向け</a>
-      <a class="nav-link" href="https://github.com/mazboxry" rel="noreferrer">GitHub</a>
-    </nav>
-  </header>
+	<canvas id='canvas'>
+		HTML5 canvas appears to be unsupported in the current browser.<br />
+		Please try updating or use a different browser.
+	</canvas>
 
-  <main>
-    <section class="hero shell">
-      <div class="hero-copy">
-        <p class="eyebrow">Godot 3.6 / Browser Playable Games</p>
-        <h1>Webで遊べるゲーム作品一覧</h1>
-        <p>
-          Steamストア風の見やすさを意識した、静的なゲームポートフォリオです。
-          各カードから紹介ページとプレイページへ移動できます。
-        </p>
-        <div class="mobile-alert" role="note">
-          <p><strong>スマホで遊ぶ方へ:</strong> 一部タイトルは端末負荷でブラウザが落ちる場合があります。軽量版への導線は <a href="mobile.html">スマホ向けページ</a> を利用してください。</p>
-        </div>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#games">作品を見る</a>
-          <a class="button button-ghost" href="README.md">追加方法</a>
-        </div>
-      </div>
-      <article class="featured-card" aria-label="Featured game">
-        <img src="assets/images/neon-dungeon-banner.svg" alt="Neon Dungeon AI banner" width="960" height="420">
-        <div class="featured-content">
-          <span class="tag">Featured</span>
-          <h2>Neon Dungeon AI</h2>
-          <p>AIディレクターが部屋構成を変える、短時間で遊べる探索アクション。</p>
-          <a class="button button-primary" href="games/neon-dungeon.html">詳細を見る</a>
-        </div>
-      </article>
-    </section>
+	<div id='start-gate'>
+		<div id='start-panel' class='godot'>
+			<h1>ゲーム開始</h1>
+			<p>スマホ環境では起動時に停止する場合があります。開始ボタンを押してからゲームを読み込みます。</p>
+			<div id='start-actions'>
+				<button id='start-button' type='button'>通常で開始</button>
+				<button id='lite-button' type='button'>軽量モードで開始</button>
+			</div>
+			<div id='start-hint'></div>
+		</div>
+	</div>
 
-    <section class="shell section" id="games" aria-labelledby="games-heading">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Library</p>
-          <h2 id="games-heading">Games</h2>
-        </div>
-        <div class="filters" aria-label="Filter games by tag">
-          <button class="filter-button active" type="button" data-filter="all">All</button>
-          <button class="filter-button" type="button" data-filter="Godot">Godot</button>
-          <button class="filter-button" type="button" data-filter="Procedural">Procedural</button>
-          <button class="filter-button" type="button" data-filter="AI">AI</button>
-          <button class="filter-button" type="button" data-filter="Puzzle">Puzzle</button>
-        </div>
-      </div>
+	<div id='status'>
+		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>
+		<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
+			<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		</div>
+		<div id='status-notice' class='godot' style='display: none;'></div>
+	</div>
 
-      <div class="game-grid">
-        <article class="game-card" data-tags="Godot Procedural Cozy">
-          <a class="card-media" href="games/asteroid-garden.html" aria-label="Asteroid Garden details">
-            <img src="assets/images/asteroid-garden-thumb.svg" alt="Asteroid Garden thumbnail" width="640" height="360">
-          </a>
-          <div class="card-body">
-            <h3>Asteroid Garden</h3>
-            <p>小惑星に植物を増やしながら資源循環を整える箱庭ゲーム。</p>
-            <div class="tag-list" aria-label="Tags">
-              <span class="tag">Godot</span>
-              <span class="tag">Procedural</span>
-              <span class="tag">Cozy</span>
-            </div>
-            <div class="card-actions">
-              <a class="button button-primary" href="games/asteroid-garden.html#play">Play</a>
-              <a class="button button-secondary" href="games/asteroid-garden.html">Details</a>
-            </div>
-          </div>
-        </article>
+	<script type='text/javascript' src='index.js'></script>
+	<script type='text/javascript'>
+		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":2385312,"index.wasm":19796835},"focusCanvas":true,"gdnativeLibs":[]};
 
-        <article class="game-card" data-tags="Godot AI Action">
-          <a class="card-media" href="games/neon-dungeon.html" aria-label="Neon Dungeon AI details">
-            <img src="assets/images/neon-dungeon-thumb.svg" alt="Neon Dungeon AI thumbnail" width="640" height="360">
-          </a>
-          <div class="card-body">
-            <h3>Neon Dungeon AI</h3>
-            <p>AIディレクターがテンポを調整するローグライト風アクション。</p>
-            <div class="tag-list" aria-label="Tags">
-              <span class="tag">Godot</span>
-              <span class="tag">AI</span>
-              <span class="tag">Action</span>
-            </div>
-            <div class="card-actions">
-              <a class="button button-primary" href="games/neon-dungeon.html#play">Play</a>
-              <a class="button button-secondary" href="games/neon-dungeon.html">Details</a>
-            </div>
-          </div>
-        </article>
+		(function() {
+			const INDETERMINATE_STATUS_STEP_MS = 100;
+			const statusRoot = document.getElementById('status');
+			const statusProgress = document.getElementById('status-progress');
+			const statusProgressInner = document.getElementById('status-progress-inner');
+			const statusIndeterminate = document.getElementById('status-indeterminate');
+			const statusNotice = document.getElementById('status-notice');
+			const startGate = document.getElementById('start-gate');
+			const startButton = document.getElementById('start-button');
+			const liteButton = document.getElementById('lite-button');
+			const startHint = document.getElementById('start-hint');
 
-        <article class="game-card" data-tags="Godot Puzzle Physics">
-          <a class="card-media" href="games/orbit-shepherd.html" aria-label="Orbit Shepherd details">
-            <img src="assets/images/orbit-shepherd-thumb.svg" alt="Orbit Shepherd thumbnail" width="640" height="360">
-          </a>
-          <div class="card-body">
-            <h3>Orbit Shepherd</h3>
-            <p>重力場を切り替えて衛星をゴールへ導く物理パズル。</p>
-            <div class="tag-list" aria-label="Tags">
-              <span class="tag">Godot</span>
-              <span class="tag">Puzzle</span>
-              <span class="tag">Physics</span>
-            </div>
-            <div class="card-actions">
-              <a class="button button-primary" href="games/orbit-shepherd.html#play">Play</a>
-              <a class="button button-secondary" href="games/orbit-shepherd.html">Details</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
+			let engine = null;
+			let booting = false;
+			let initializing = true;
+			let statusMode = 'hidden';
+			let animationCallbacks = [];
 
-  <footer class="site-footer">
-    <div class="shell footer-inner">
-      <p>&copy; 2026 mazboxry. Built as a static GitHub Pages portfolio.</p>
-      <a href="https://github.com/mazboxry/portfolio" rel="noreferrer">Repository</a>
-    </div>
-  </footer>
+			function animate(time) {
+				animationCallbacks.forEach(callback => callback(time));
+				requestAnimationFrame(animate);
+			}
+			requestAnimationFrame(animate);
 
-  <script src="assets/js/main.js"></script>
+			function setStatusMode(mode) {
+				if (statusMode === mode || !initializing) {
+					return;
+				}
+				[statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
+					elem.style.display = 'none';
+				});
+				animationCallbacks = animationCallbacks.filter(value => value !== animateStatusIndeterminate);
+				switch (mode) {
+					case 'progress':
+						statusProgress.style.display = 'block';
+						break;
+					case 'indeterminate':
+						statusIndeterminate.style.display = 'block';
+						animationCallbacks.push(animateStatusIndeterminate);
+						break;
+					case 'notice':
+						statusNotice.style.display = 'block';
+						break;
+					case 'hidden':
+						break;
+					default:
+						throw new Error('Invalid status mode');
+				}
+				statusMode = mode;
+			}
+
+			function animateStatusIndeterminate(ms) {
+				const i = Math.floor(ms / INDETERMINATE_STATUS_STEP_MS % 8);
+				if (statusIndeterminate.children[i].style.borderTopColor === '') {
+					Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
+						child.style.borderTopColor = '';
+					});
+					statusIndeterminate.children[i].style.borderTopColor = '#dfdfdf';
+				}
+			}
+
+			function setStatusNotice(text) {
+				while (statusNotice.lastChild) {
+					statusNotice.removeChild(statusNotice.lastChild);
+				}
+				text.split('\n').forEach((line) => {
+					statusNotice.appendChild(document.createTextNode(line));
+					statusNotice.appendChild(document.createElement('br'));
+				});
+			}
+
+			function displayFailureNotice(err) {
+				const msg = err && err.message ? err.message : String(err);
+				console.error(msg);
+				setStatusNotice(msg);
+				setStatusMode('notice');
+				startHint.textContent = '起動に失敗しました。ページ再読み込み後、軽量モードをお試しください。';
+				startGate.style.display = 'flex';
+				startButton.disabled = false;
+				liteButton.disabled = false;
+				booting = false;
+			}
+
+			function setStartState(text) {
+				startHint.textContent = text;
+				startButton.disabled = booting;
+				liteButton.disabled = booting;
+			}
+
+			function bootGame(liteMode) {
+				if (booting) {
+					return;
+				}
+				if (!Engine.isWebGLAvailable()) {
+					startHint.textContent = 'WebGLが利用できません。ブラウザ更新または別ブラウザをお試しください。';
+					return;
+				}
+
+				booting = true;
+				initializing = true;
+				statusMode = 'hidden';
+				setStartState('起動中です…');
+				statusRoot.style.visibility = 'visible';
+
+				if (liteMode) {
+					GODOT_CONFIG.args = ['--lite=1'];
+				} else {
+					GODOT_CONFIG.args = [];
+				}
+
+				engine = new Engine(GODOT_CONFIG);
+				setStatusMode('indeterminate');
+
+				engine.startGame({
+					onProgress: function(current, total) {
+						if (total > 0) {
+							statusProgressInner.style.width = (current / total * 100) + '%';
+							setStatusMode('progress');
+							if (current === total) {
+								setTimeout(() => setStatusMode('indeterminate'), 500);
+							}
+						} else {
+							setStatusMode('indeterminate');
+						}
+					}
+				}).then(() => {
+					setStatusMode('hidden');
+					statusRoot.style.visibility = 'hidden';
+					startGate.style.display = 'none';
+					initializing = false;
+					booting = false;
+				}, displayFailureNotice);
+			}
+
+			startButton.addEventListener('click', () => bootGame(false));
+			liteButton.addEventListener('click', () => bootGame(true));
+
+			const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+			if (isMobile) {
+				startHint.textContent = 'スマホ安定化のため、タップ後に起動します。';
+			}
+		})();
+	</script>
 </body>
 </html>

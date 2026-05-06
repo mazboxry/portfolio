@@ -39,15 +39,47 @@
           <a class="button button-ghost" href="README.md">追加方法</a>
         </div>
       </div>
-      <article class="featured-card" aria-label="Featured game">
-        <img src="assets/images/bird-index.jpg" alt="九九フラッピーバード banner" width="800" height="600">
-        <div class="featured-content">
-          <span class="tag">Featured</span>
-          <h2>九九フラッピーバード</h2>
-          <p>クックは九九が大好きな小鳥。九九を鳴いたら答えて応援してあげて。間違えると落っこちちゃう。正解して家まで送ってあげよう</p>
-          <a class="button button-primary" href="games/bird-race.html">詳細を見る</a>
+      <div class="featured-slider" id="featured-slider">
+        <div class="slider-track">
+          <article class="featured-slide" aria-label="Featured game 1">
+            <img src="assets/images/bird-index.jpg" alt="九九フラッピーバード banner" width="800" height="600">
+            <div class="featured-content">
+              <span class="tag">Featured</span>
+              <h2>九九フラッピーバード</h2>
+              <p>クックは九九が大好きな小鳥。九九を鳴いたら答えて応援してあげて。間違えると落っこちちゃう。正解して家まで送ってあげよう</p>
+              <a class="button button-primary" href="games/bird-race.html">詳細を見る</a>
+            </div>
+          </article>
+          <article class="featured-slide" aria-label="Featured game 2">
+            <img src="assets/images/pet-index.jpg" alt="足し算どうぶつレース banner" width="800" height="600">
+            <div class="featured-content">
+              <span class="tag">Featured</span>
+              <h2>足し算どうぶつレース</h2>
+              <p>算数大好きな動物たちが コース上の数を足してゴールを目指します。</p>
+              <a class="button button-primary" href="games/pet-math.html">詳細を見る</a>
+            </div>
+          </article>
+          <article class="featured-slide" aria-label="Featured game 3">
+            <img src="assets/images/pz-index.jpg" alt="Prime of Z banner" width="800" height="600">
+            <div class="featured-content">
+              <span class="tag">Featured</span>
+              <h2>Prime of Z</h2>
+              <p>素因数分解を使ってゾンビを倒す、テンポ重視の算数シューティング。</p>
+              <a class="button button-primary" href="games/prime-z.html">詳細を見る</a>
+            </div>
+          </article>
         </div>
-      </article>
+
+        <div class="slider-nav">
+          <button class="slider-btn prev" aria-label="Previous slide">&lsaquo;</button>
+          <button class="slider-btn next" aria-label="Next slide">&rsaquo;</button>
+          <div class="slider-dots">
+            <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+            <button class="dot" data-index="1" aria-label="Slide 2"></button>
+            <button class="dot" data-index="2" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="shell section" id="games" aria-labelledby="games-heading">

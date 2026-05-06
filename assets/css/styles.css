@@ -420,6 +420,15 @@ a {
   object-fit: cover;
 }
 
+/* Portrait screenshots */
+.screenshot-grid.is-portrait {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.screenshot-grid.is-portrait img {
+  aspect-ratio: 9 / 16;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   background: rgba(25, 29, 35, 0.72);

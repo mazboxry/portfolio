@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="mazboxry のブラウザで遊べる算数練習ゲームポートフォリオ">
-  <title>mazboxry Math Games Portfolio</title>
+  <meta name="description" content="mazboxry のポートフォリオ。Godot Engineで制作したミニゲームや、Blenderで作成した3D作品を公開しています。">
+  <title>mazboxry Portfolio | Godot Games & Blender Works</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
   <header class="site-header">
     <nav class="nav shell" aria-label="Main navigation">
       <a class="brand" href="index.html" aria-label="mazboxry Game Portfolio home">
         <span class="brand-mark">M</span>
-        <span>mazboxry Games</span>
+        <span>mazboxry Portfolio</span>
       </a>
       <a class="nav-link" href="mobile.html">スマホ向け</a>
       <a class="nav-link" href="https://github.com/mazboxry" rel="noreferrer">GitHub</a>
@@ -22,14 +24,15 @@
   <main>
     <section class="hero shell">
       <div class="hero-copy">
-        <p class="eyebrow">Godot Engine / Math Practice Games</p>
-        <h1>Webで遊べる算数練習ゲーム一覧</h1>
+        <p class="eyebrow">Godot Engine / Blender / Digital Creations</p>
+        <h1>Games & 3D Art Portfolio</h1>
         <p>
-          Godot Engine製のブラウザで遊べる算数練習ゲームをまとめています。
-          各カードから紹介ページとプレイページへ移動できます。
+          Godot Engine で制作したミニゲームや、Blender で作成した 3D 作品をまとめています。
+          最近は算数練習ゲームを多めに制作中ですが、さまざまなジャンルの作品を順次追加していきます。
         </p>
         <div class="mobile-alert" role="note">
-          <p><strong>スマホで遊ぶ方へ:</strong> 一部タイトルは端末負荷でブラウザが落ちる場合があります。軽量版への導線は <a href="mobile.html">スマホ向けページ</a> を利用してください。</p>
+          <p><strong>スマホで遊ぶ方へ:</strong> 一部タイトルは端末負荷でブラウザが落ちる場合があります。軽量版への導線は <a href="mobile.html">スマホ向けページ</a>
+            を利用してください。</p>
         </div>
         <div class="hero-actions">
           <a class="button button-primary" href="#games">作品を見る</a>
@@ -37,12 +40,12 @@
         </div>
       </div>
       <article class="featured-card" aria-label="Featured game">
-        <img src="assets/playable/pz/index.png" alt="Prime of Z banner" width="800" height="600">
+        <img src="assets/playable/bird/index.png" alt="九九フラッピーバード banner" width="800" height="600">
         <div class="featured-content">
           <span class="tag">Featured</span>
-          <h2>Prime of Z</h2>
-          <p>素因数分解を使ってゾンビを倒す、テンポ重視の算数シューティング。</p>
-          <a class="button button-primary" href="games/prime-z.html">詳細を見る</a>
+          <h2>九九フラッピーバード</h2>
+          <p>クックは九九が大好きな小鳥。九九を鳴いたら答えて応援してあげて。間違えると落っこちちゃう。正解して家まで送ってあげよう</p>
+          <a class="button button-primary" href="games/bird-race.html">詳細を見る</a>
         </div>
       </article>
     </section>
@@ -57,10 +60,47 @@
           <button class="filter-button active" type="button" data-filter="all">All</button>
           <button class="filter-button" type="button" data-filter="GODOT">GODOT</button>
           <button class="filter-button" type="button" data-filter="MATH">MATH</button>
+          <button class="filter-button" type="button" data-filter="BLENDER">BLENDER</button>
         </div>
       </div>
 
       <div class="game-grid">
+        <article class="game-card" data-tags="GODOT MATH">
+          <a class="card-media" href="games/bird-race.html" aria-label="Bird Race details">
+            <img src="assets/playable/bird/index.png" alt="Bird Race thumbnail" width="800" height="600">
+          </a>
+          <div class="card-body">
+            <h3>九九フラッピーバード</h3>
+            <p>クックは九九が大好きな小鳥。九九を鳴いたら答えて応援してあげて。間違えると落っこちちゃう。正解して家まで送ってあげよう</p>
+            <div class="tag-list" aria-label="Tags">
+              <span class="tag">GODOT</span>
+              <span class="tag">MATH</span>
+            </div>
+            <div class="card-actions">
+              <a class="button button-primary" href="games/bird-race.html#play">Play</a>
+              <a class="button button-secondary" href="games/bird-race.html">Details</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="game-card" data-tags="GODOT MATH">
+          <a class="card-media" href="games/pet-math.html" aria-label="Pet Math details">
+            <img src="assets/playable/pet/index.png" alt="Pet Math thumbnail" width="800" height="600">
+          </a>
+          <div class="card-body">
+            <h3>足し算どうぶつレース</h3>
+            <p>算数大好きな動物たちが コース上の数を足してゴールを目指します。</p>
+            <div class="tag-list" aria-label="Tags">
+              <span class="tag">GODOT</span>
+              <span class="tag">MATH</span>
+            </div>
+            <div class="card-actions">
+              <a class="button button-primary" href="games/pet-math.html#play">Play</a>
+              <a class="button button-secondary" href="games/pet-math.html">Details</a>
+            </div>
+          </div>
+        </article>
+
         <article class="game-card" data-tags="GODOT MATH">
           <a class="card-media" href="games/prime-z.html" aria-label="Prime of Z details">
             <img src="assets/playable/pz/index.png" alt="Prime of Z thumbnail" width="800" height="600">
@@ -84,7 +124,7 @@
           </a>
           <div class="card-body">
             <h3>Dice Battle</h3>
-            <p>サイコロの目をヒントに計算して戦う、バトル形式の算数練習ゲーム。</p>
+            <p>TRPG風のサイコロバトラー。ダイスの目を足して敵に攻撃！　間違えるとダメージを受けるぞ</p>
             <div class="tag-list" aria-label="Tags">
               <span class="tag">GODOT</span>
               <span class="tag">MATH</span>
@@ -96,29 +136,12 @@
           </div>
         </article>
         <article class="game-card" data-tags="GODOT MATH">
-          <a class="card-media" href="games/bird-race.html" aria-label="Bird Race details">
-            <img src="assets/playable/bird/index.png" alt="Bird Race thumbnail" width="800" height="600">
-          </a>
-          <div class="card-body">
-            <h3>Bird Race</h3>
-            <p>鳥のレースを進めながら計算問題に挑戦する、スピード感のある算数ゲーム。</p>
-            <div class="tag-list" aria-label="Tags">
-              <span class="tag">GODOT</span>
-              <span class="tag">MATH</span>
-            </div>
-            <div class="card-actions">
-              <a class="button button-primary" href="games/bird-race.html#play">Play</a>
-              <a class="button button-secondary" href="games/bird-race.html">Details</a>
-            </div>
-          </div>
-        </article>
-        <article class="game-card" data-tags="GODOT MATH">
           <a class="card-media" href="games/math-stg.html" aria-label="Math STG details">
             <img src="assets/playable/stg/index.png" alt="Math STG thumbnail" width="800" height="600">
           </a>
           <div class="card-body">
-            <h3>Math STG</h3>
-            <p>シューティングの操作感で算数問題を解いていく、STG風の練習ゲーム。</p>
+            <h3>数式シューティング</h3>
+            <p>敵キャラも自分のパワーアップも全部数式！</p>
             <div class="tag-list" aria-label="Tags">
               <span class="tag">GODOT</span>
               <span class="tag">MATH</span>
@@ -126,23 +149,6 @@
             <div class="card-actions">
               <a class="button button-primary" href="games/math-stg.html#play">Play</a>
               <a class="button button-secondary" href="games/math-stg.html">Details</a>
-            </div>
-          </div>
-        </article>
-        <article class="game-card" data-tags="GODOT MATH">
-          <a class="card-media" href="games/pet-math.html" aria-label="Pet Math details">
-            <img src="assets/playable/pet/index.png" alt="Pet Math thumbnail" width="800" height="600">
-          </a>
-          <div class="card-body">
-            <h3>Pet Math</h3>
-            <p>ペットのお世話と算数練習を組み合わせた、やさしい学習ゲーム。</p>
-            <div class="tag-list" aria-label="Tags">
-              <span class="tag">GODOT</span>
-              <span class="tag">MATH</span>
-            </div>
-            <div class="card-actions">
-              <a class="button button-primary" href="games/pet-math.html#play">Play</a>
-              <a class="button button-secondary" href="games/pet-math.html">Details</a>
             </div>
           </div>
         </article>
@@ -159,4 +165,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

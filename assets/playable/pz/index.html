@@ -173,6 +173,14 @@
 				transform: rotate(360deg);
 			}
 		}
+
+		.for-mobile { display: none; }
+		.for-pc { display: block; }
+
+		@media (pointer: coarse) {
+			.for-mobile { display: block; }
+			.for-pc { display: none; }
+		}
 	</style>
 <link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
 <link rel='apple-touch-icon' href='index.apple-touch-icon.png'/>
@@ -185,8 +193,13 @@
 	</canvas>
 	<div id='start-gate'>
 		<div id='start-gate-card' class='godot'>
-			<strong>タップしてゲームを開始</strong><br />
-			スマホでは開始操作後に読み込みます。<br />
+			<div class="for-pc">
+				<strong>クリックしてゲームを開始</strong>
+			</div>
+			<div class="for-mobile">
+				<strong>タップしてゲームを開始</strong><br />
+				スマホでは開始操作後に読み込みます。
+			</div>
 			<button id='start-btn' type='button'>開始する</button>
 			<div id='start-gate-loading' role='status' aria-live='polite'>
 				<span id='start-gate-spinner' aria-hidden='true'></span>

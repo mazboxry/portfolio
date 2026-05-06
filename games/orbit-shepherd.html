@@ -46,13 +46,24 @@
     <section class="shell detail-layout">
       <div class="detail-stack">
         <section class="detail-panel" id="play" aria-labelledby="play-heading">
-          <p class="eyebrow">Web Export</p>
-          <h2 id="play-heading">Playable Area</h2>
-          <p>現在はプレースホルダーです。Godot の Web エクスポート後、この iframe の src を実際のゲームの index.html に差し替えます。</p>
-          <div class="play-frame is-landscape">
-            <iframe title="Orbit Shepherd playable placeholder" src="../assets/playable/placeholder.html?title=Orbit%20Shepherd" loading="lazy" allowfullscreen></iframe>
+          <p class="eyebrow">Playable Area</p>
+          <h2 id="play-heading">Game Play</h2>
+          <div class="game-launch-gate">
+            <div class="gate-background">
+              <img src="../assets/images/orbit-shepherd-banner.svg" alt="" aria-hidden="true">
+            </div>
+            <div class="gate-content">
+              <h3>ブラウザで今すぐプレイ</h3>
+              <p>ゲームは別タブで開きます。スマートフォンでも全画面で快適にプレイ可能です。</p>
+              <a href="../assets/playable/placeholder.html?title=Orbit%20Shepherd" class="launch-button" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                <span>ゲームを開始する</span>
+              </a>
+            </div>
           </div>
-          <p class="play-frame-note"><strong>スマホ注意:</strong> 端末によってはブラウザがクラッシュする場合があります。重い場合はPC版ブラウザでお試しください。</p>
+          <p class="play-frame-note"><strong>注意:</strong> 端末によっては読み込みに時間がかかる場合があります。重い場合はPC版ブラウザでお試しください。</p>
         </section>
 
         <section class="detail-panel" aria-labelledby="screenshots-heading">

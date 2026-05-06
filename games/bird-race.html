@@ -47,8 +47,12 @@
           <p class="eyebrow">Web Export</p>
           <h2 id="play-heading">Playable Area</h2>
           <p>Godot Engine の Web エクスポートを iframe で読み込んでいます。</p>
-          <div class="play-frame is-standard">
-            <iframe title="Bird Race playable" src="../assets/playable/bird/index.html" loading="lazy" allowfullscreen></iframe>
+          <div class="play-frame is-standard" data-game-url="../assets/playable/bird/index.html">
+            <div class="play-overlay">
+              <p>タップでゲームを開始します<br><small>（音が鳴る場合があります / モバイル環境は負荷にご注意ください）</small></p>
+              <button class="button button-primary" type="button">Game Start</button>
+            </div>
+            <iframe title="Bird Race playable" src="about:blank" allowfullscreen></iframe>
           </div>
           <p class="play-frame-note"><strong>スマホ注意:</strong> 端末によってはブラウザがクラッシュする場合があります。重い場合はPC版ブラウザでお試しください。</p>
         </section>

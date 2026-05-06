@@ -49,8 +49,12 @@
           <p class="eyebrow">Web Export</p>
           <h2 id="play-heading">Playable Area</h2>
           <p>現在はプレースホルダーです。Godot の Web エクスポート後、この iframe の src を実際のゲームの index.html に差し替えます。</p>
-          <div class="play-frame is-landscape">
-            <iframe title="Orbit Shepherd playable placeholder" src="../assets/playable/placeholder.html?title=Orbit%20Shepherd" loading="lazy" allowfullscreen></iframe>
+          <div class="play-frame is-landscape" data-game-url="../assets/playable/placeholder.html?title=Orbit%20Shepherd">
+            <div class="play-overlay">
+              <p>タップでゲームを開始します<br><small>（音が鳴る場合があります / モバイル環境は負荷にご注意ください）</small></p>
+              <button class="button button-primary" type="button">Game Start</button>
+            </div>
+            <iframe title="Orbit Shepherd playable placeholder" src="about:blank" allowfullscreen></iframe>
           </div>
           <p class="play-frame-note"><strong>スマホ注意:</strong> 端末によってはブラウザがクラッシュする場合があります。重い場合はPC版ブラウザでお試しください。</p>
         </section>

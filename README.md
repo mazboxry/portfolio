@@ -1,4 +1,6 @@
-# mazboxry Game Portfolio
+# mazboxry Portfolio
+
+[https://mazboxry.github.io/portfolio/](https://mazboxry.github.io/portfolio/)
 
 GitHub Pages でそのまま公開できる、静的なゲームポートフォリオです。Godot 3.6 などで Web エクスポートしたゲームを iframe で埋め込み、一覧ページから「Play」と「Details」へ誘導できます。
 

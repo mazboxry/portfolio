@@ -35,6 +35,69 @@
 		}
 
 
+
+		#start-gate {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: rgba(0, 0, 0, 0.88);
+			z-index: 10;
+		}
+
+		#start-gate-card {
+			max-width: min(90vw, 420px);
+			padding: 20px;
+			border-radius: 12px;
+			text-align: left;
+		}
+
+		#start-btn {
+			margin-top: 12px;
+			border: 0;
+			border-radius: 10px;
+			padding: 12px 16px;
+			font-size: 16px;
+			font-weight: 600;
+			cursor: pointer;
+			background: #4f8cff;
+			color: #fff;
+		}
+
+		#start-gate-loading {
+			display: none;
+			margin-top: 10px;
+			font-size: 14px;
+			font-weight: 700;
+			letter-spacing: 0.03em;
+			color: #dfdfdf;
+			align-items: center;
+			gap: 8px;
+		}
+
+		#start-gate.loading #start-gate-loading {
+			display: inline-flex;
+		}
+
+		#start-gate-spinner {
+			width: 14px;
+			height: 14px;
+			border-radius: 999px;
+			border: 2px solid rgba(255, 255, 255, 0.3);
+			border-top-color: #ffffff;
+			animation: start-gate-spin 0.8s linear infinite;
+		}
+
+		@keyframes start-gate-spin {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
 		/* Status display
 		 * ============== */
 
@@ -121,6 +184,17 @@
 		HTML5 canvas appears to be unsupported in the current browser.<br />
 		Please try updating or use a different browser.
 	</canvas>
+	<div id='start-gate'>
+		<div id='start-gate-card' class='godot'>
+			<strong>タップしてゲームを開始</strong><br />
+			スマホでは開始操作後に読み込みます。<br />
+			<button id='start-btn' type='button'>開始する</button>
+			<div id='start-gate-loading' role='status' aria-live='polite'>
+				<span id='start-gate-spinner' aria-hidden='true'></span>
+				Now Loading...
+			</div>
+		</div>
+	</div>
 	<div id='status'>
 		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>
 		<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
@@ -217,9 +291,23 @@
 				initializing = false;
 			};
 
-			if (!Engine.isWebGLAvailable()) {
-				displayFailureNotice('WebGL not available');
-			} else {
+			const startGate = document.getElementById('start-gate');
+			const startButton = document.getElementById('start-btn');
+			let booting = false;
+
+			function startGame() {
+				if (booting) return;
+				booting = true;
+
+				if (!Engine.isWebGLAvailable()) {
+					displayFailureNotice('WebGL not available');
+					startButton.disabled = false;
+					booting = false;
+					return;
+				}
+
+				startButton.disabled = true;
+				startGate.classList.add('loading');
 				setStatusMode('indeterminate');
 				engine.startGame({
 					'onProgress': function (current, total) {
@@ -238,9 +326,17 @@
 					},
 				}).then(() => {
 					setStatusMode('hidden');
+					startGate.style.display = 'none';
 					initializing = false;
-				}, displayFailureNotice);
+				}, (err) => {
+					displayFailureNotice(err);
+					startButton.disabled = false;
+					startGate.classList.remove('loading');
+					booting = false;
+				});
 			}
+
+			startButton.addEventListener('click', startGame);
 		})();
 	//]]></script>
 </body>

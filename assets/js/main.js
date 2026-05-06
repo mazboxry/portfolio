@@ -15,17 +15,3 @@ filterButtons.forEach((button) => {
     });
   });
 });
-
-// Play Overlay Logic
-document.querySelectorAll('.play-frame').forEach((frame) => {
-  const overlay = frame.querySelector('.play-overlay');
-  const iframe = frame.querySelector('iframe');
-  const url = frame.dataset.gameUrl;
-
-  if (overlay && iframe && url) {
-    overlay.addEventListener('click', () => {
-      iframe.src = url;
-      overlay.classList.add('hidden');
-    });
-  }
-});

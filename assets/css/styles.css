@@ -382,6 +382,15 @@ a {
   min-height: min(70vh, 700px);
 }
 
+.play-frame.is-standard iframe {
+  aspect-ratio: 4 / 3;
+  min-height: min(70vh, 720px);
+}
+
+.screenshot-grid-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .mobile-alert {
   border: 1px solid rgba(255, 192, 86, 0.38);
   background: rgba(255, 192, 86, 0.12);
@@ -467,7 +476,8 @@ a {
   }
 
   .play-frame.is-portrait iframe,
-  .play-frame.is-landscape iframe {
+  .play-frame.is-landscape iframe,
+  .play-frame.is-standard iframe {
     min-height: 0;
   }
 

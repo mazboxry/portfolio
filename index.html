@@ -28,7 +28,7 @@
         <h1>Games & 3D Art Portfolio</h1>
         <p>
           Godot Engine で制作したミニゲームや、Blender で作成した 3D 作品をまとめています。
-          最近は算数練習ゲームを多めに制作中ですが、さまざまなジャンルの作品を順次追加していきます。
+          算数練習ゲームに加え、自作エンジンによるノベルゲームなど、さまざまなジャンルの作品を順次追加していきます。
         </p>
         <div class="mobile-alert" role="note">
           <p><strong>スマホで遊ぶ方へ:</strong> 一部タイトルは端末負荷でブラウザが落ちる場合があります。軽量版への導線は <a href="mobile.html">スマホ向けページ</a>
@@ -68,6 +68,15 @@
               <a class="button button-primary" href="games/prime-z.html">詳細を見る</a>
             </div>
           </article>
+          <article class="featured-slide" aria-label="Featured game 4">
+            <img src="assets/playable/LaNovel43/index.png" alt="LaNovel banner" width="800" height="600">
+            <div class="featured-content">
+              <span class="tag">Featured</span>
+              <h2>ノベルゲーム「勇者の村を焼かないだけなのに」</h2>
+              <p>自作のノベルゲームエンジンを使用したデモ作品。Effekseerによるリッチな演出とAI素材を活用。</p>
+              <a class="button button-primary" href="games/lanovel.html">詳細を見る</a>
+            </div>
+          </article>
         </div>
 
         <div class="slider-nav">
@@ -77,6 +86,7 @@
             <button class="dot active" data-index="0" aria-label="Slide 1"></button>
             <button class="dot" data-index="1" aria-label="Slide 2"></button>
             <button class="dot" data-index="2" aria-label="Slide 3"></button>
+            <button class="dot" data-index="3" aria-label="Slide 4"></button>
           </div>
         </div>
       </div>
@@ -92,11 +102,30 @@
           <button class="filter-button active" type="button" data-filter="all">All</button>
           <button class="filter-button" type="button" data-filter="GODOT">GODOT</button>
           <button class="filter-button" type="button" data-filter="MATH">MATH</button>
+          <button class="filter-button" type="button" data-filter="NOVEL">NOVEL</button>
           <button class="filter-button" type="button" data-filter="BLENDER">BLENDER</button>
         </div>
       </div>
 
       <div class="game-grid">
+        <article class="game-card" data-tags="GODOT NOVEL">
+          <a class="card-media" href="games/lanovel.html" aria-label="LaNovel details">
+            <img src="assets/playable/LaNovel43/index.png" alt="LaNovel thumbnail" width="800" height="600">
+          </a>
+          <div class="card-body">
+            <h3>ノベルゲーム「勇者の村を焼かないだけなのに」</h3>
+            <p>自作のノベルゲームエンジンを使用したデモ作品。Effekseerによるリッチな演出とAI素材を活用。</p>
+            <div class="tag-list" aria-label="Tags">
+              <span class="tag">GODOT</span>
+              <span class="tag">NOVEL</span>
+            </div>
+            <div class="card-actions">
+              <a class="button button-primary" href="games/lanovel.html#play">Play</a>
+              <a class="button button-secondary" href="games/lanovel.html">Details</a>
+            </div>
+          </div>
+        </article>
+
         <article class="game-card" data-tags="GODOT MATH">
           <a class="card-media" href="games/bird-race.html" aria-label="Bird Race details">
             <img src="assets/images/bird-index.jpg" alt="Bird Race thumbnail" width="800" height="600">

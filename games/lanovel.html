@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LaNovel - Godot Engine製の自作ノベルエンジンデモ">
+  <title>LaNovel | mazboxry Portfolio</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">M</span>
+        <span>mazboxry Portfolio</span>
+      </a>
+      <a class="nav-link" href="../index.html#games">All Games</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero shell">
+      <a class="breadcrumb" href="../index.html#games">← 作品一覧へ戻る</a>
+      <div class="page-hero-grid">
+        <div class="hero-banner">
+          <img src="../assets/playable/LaNovel43/index.png" alt="LaNovel banner" width="800" height="600">
+        </div>
+        <div>
+          <p class="eyebrow">Godot Novel Game</p>
+          <h1>ノベルゲーム「勇者の村を焼かないだけなのに」</h1>
+          <p>自作のノベルゲームエンジンを使用したデモ作品です。Effekseerによる演出と、AI生成素材を一部活用しています。</p>
+          <div class="tag-list" aria-label="Technologies and genres">
+            <span class="tag">GODOT</span>
+            <span class="tag">NOVEL</span>
+          </div>
+          <div class="detail-actions">
+            <a class="button button-primary" href="#play">Play Now</a>
+            <a class="button button-ghost" href="#technical">Technical Notes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell detail-layout">
+      <div class="detail-stack">
+        <section class="detail-panel" id="play" aria-labelledby="play-heading">
+          <p class="eyebrow">Playable Area</p>
+          <h2 id="play-heading">Game Play</h2>
+          <div class="game-launch-gate">
+            <div class="gate-background">
+              <img src="../assets/playable/LaNovel43/index.png" alt="" aria-hidden="true">
+            </div>
+            <div class="gate-content">
+              <h3>ブラウザで今すぐプレイ</h3>
+              <p>ゲームは別タブで開きます。Godot 4.3で制作されており、Effekseerによるリッチなエフェクトを楽しめます。スマホのブラウザでは動作しません。</p>
+              <a href="../assets/playable/LaNovel43/index.html" class="launch-button" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <span>ゲームを開始する</span>
+              </a>
+            </div>
+          </div>
+          <p class="play-frame-note"><strong>注意:</strong> 端末によっては読み込みに時間がかかる場合があります。WebGL2対応のブラウザで動作します。</p>
+        </section>
+
+        <section class="detail-panel" aria-labelledby="screenshots-heading">
+          <p class="eyebrow">Screenshot</p>
+          <h2 id="screenshots-heading">Screenshot</h2>
+          <div class="screenshot-grid screenshot-grid-single">
+            <img src="../assets/playable/LaNovel43/index.png" alt="LaNovel screenshot" width="800" height="600">
+          </div>
+        </section>
+      </div>
+
+      <aside class="detail-stack">
+        <section class="detail-panel" aria-labelledby="controls-heading">
+          <p class="eyebrow">How to Play</p>
+          <h2 id="controls-heading">Controls</h2>
+          <ul class="controls-list">
+            <li>クリック：読み進める</li>
+
+          </ul>
+        </section>
+
+        <section class="detail-panel" id="technical" aria-labelledby="technical-heading">
+          <p class="eyebrow">Technical</p>
+          <h2 id="technical-heading">Technologies</h2>
+          <ul class="tech-list">
+            <li>Godot Engine 4.3</li>
+            <li>Custom Novel Engine (Self-made)</li>
+            <li>Effekseer for Godot</li>
+            <li>VROID Studioによる立ち絵作成</li>
+            <li>Blenderによるクリーチャー作成</li>
+            <li>一部にAI素材を使用しています</li>
+          </ul>
+          <h2>License Notice</h2>
+          <p>本作品では <strong>Effekseer</strong> を使用しています。Effekseerのライセンス（MIT License）に基づき、以下の表記を行います。</p>
+          <div
+            style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; font-size: 0.85rem; color: var(--muted); margin-top: 10px;">
+            The MIT License (MIT)<br><br>
+            Copyright (c) 2015 Effekseer Project<br><br>
+            Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+            documentation files (the "Software"), to deal in the Software without restriction, including without
+            limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+            the Software, and to permit persons to whom the Software is furnished to do so, subject to the following
+            conditions:<br><br>
+            The above copyright notice and this permission notice shall be included in all copies or substantial
+            portions of the Software.
+          </div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>&copy; 2026 mazboxry. Static portfolio for GitHub Pages.</p>
+      <a href="../index.html">Home</a>
+    </div>
+  </footer>
+</body>
+
+</html>

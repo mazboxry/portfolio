@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GraphMock: Visual Mockup Tool - ノードベースのインターフェース設計のためのビジュアルモックアップ作成ツール">
+  <title>GraphMock: Visual Mockup Tool | mazboxry Portfolio</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">M</span>
+        <span>mazboxry Portfolio</span>
+      </a>
+      <a class="nav-link" href="../index.html#games">All Games</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero shell">
+      <a class="breadcrumb" href="../index.html#games">← 作品一覧へ戻る</a>
+      <div class="page-hero-grid">
+        <div class="hero-banner">
+          <img src="../assets/playable/graphmock/index.jpg" alt="GraphMock banner" width="800" height="600">
+        </div>
+        <div>
+          <p class="eyebrow">Godot 4.6 Tool Mockup</p>
+          <h1>GraphMock: Visual Mockup Tool</h1>
+          <p>ノードベースのインターフェース設計のためのビジュアルモックアップ作成ツールです。ノーコード開発プラットフォームのUI検討や、複雑なノード構造の可視化を目的として制作しました。</p>
+          <div class="tag-list" aria-label="Technologies and genres">
+            <span class="tag">GODOT</span>
+          </div>
+          <div class="detail-actions">
+            <a class="button button-primary" href="#play">Launch Tool</a>
+            <a class="button button-ghost" href="#technical">Technical Notes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell detail-layout">
+      <div class="detail-stack">
+        <section class="detail-panel" id="play" aria-labelledby="play-heading">
+          <p class="eyebrow">Playable Area</p>
+          <h2 id="play-heading">Launch Tool</h2>
+          <div class="game-launch-gate">
+            <div class="gate-background">
+              <img src="../assets/playable/graphmock/index.jpg" alt="" aria-hidden="true">
+            </div>
+            <div class="gate-content">
+              <h3>ブラウザで試用する</h3>
+              <p>ツールは別タブで開きます。ノードの追加や接続、プロパティの編集などの基本操作を試すことができます。</p>
+              <a href="../assets/playable/graphmock/index.html" class="launch-button" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <span>ツールを起動する</span>
+              </a>
+            </div>
+          </div>
+          <p class="play-frame-note"><strong>注意:</strong> Godot 4.6製のため、一部ブラウザ環境や端末によっては動作しない、もしくは重い場合があります。</p>
+        </section>
+
+        <section class="detail-panel" aria-labelledby="screenshots-heading">
+          <p class="eyebrow">Screenshot</p>
+          <h2 id="screenshots-heading">Screenshots</h2>
+          <div class="screenshot-grid screenshot-grid-single">
+            <img src="../assets/images/graphmock-shot1.jpg" alt="GraphMock Screenshot 1" width="800" height="600">
+          </div>
+          <div class="screenshot-grid screenshot-grid-single">
+            <img src="../assets/images/graphmock-shot2.jpg" alt="GraphMock Screenshot 2" width="800" height="600">
+          </div>
+        </section>
+      </div>
+
+      <aside class="detail-stack">
+        <section class="detail-panel" aria-labelledby="features-heading">
+          <p class="eyebrow">Features</p>
+          <h2 id="features-heading">Key Features</h2>
+          <ul class="controls-list">
+            <li><strong>動的ノード生成:</strong> 任意のタイミングでカスタムノードを追加可能</li>
+            <li><strong>ポート管理:</strong> インプット・アウトプットポートの動的な構成</li>
+            <li><strong>プロパティ編集:</strong> ノードごとに設定可能なパラメータのモックアップ</li>
+            <li><strong>ビジュアル接続:</strong> ノード間の論理的な繋がりを視覚化</li>
+          </ul>
+        </section>
+
+        <section class="detail-panel" id="technical" aria-labelledby="technical-heading">
+          <p class="eyebrow">Technical</p>
+          <h2 id="technical-heading">Technologies</h2>
+          <ul class="tech-list">
+            <li>Godot Engine 4.6</li>
+            <li>GraphEdit / GraphNode</li>
+            <li>Visual Prototyping</li>
+          </ul>
+          <h2>Development Goal</h2>
+          <p>複雑なロジックを非エンジニアでも直感的に構築できるノーコードツールの土台として、GodotのGraphEditシステムがどこまで柔軟にカスタマイズ可能かを検証するプロトタイプです。ノードの動的な初期化や、インデックス外アクセスの回避などの堅牢な実装に注力しました。</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>&copy; 2026 mazboxry. Static portfolio for GitHub Pages.</p>
+      <a href="../index.html">Home</a>
+    </div>
+  </footer>
+</body>
+
+</html>
